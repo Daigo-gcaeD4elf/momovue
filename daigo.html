@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+
+<body>
+    <div class="frame">
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <div id="momoclo">
+                <select type="text" v-model="member">
+                    <option value="2">百田夏菜子</option>
+                    <option value="1">玉井詩織</option>
+                    <option value="3">佐々木彩夏</option>
+                    <option value="4">高城れに</option>
+                </select>
+                <button v-on:click="getMemberInfo">くりっく</button>
+                <p>生年月日：<span v-text="birthday"></span></p>
+                <p>血液型：<span v-text="bloodtype"></span></p>
+                <p>メンバーカラー：<span v-text="color"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var momoclo = new Vue({
+            el: '#momoclo',
+            data: {
+                birthday: ''
+                ,color: ''
+                ,bloodtype: ''
+                ,member: ''
+            },
+            methods: {
+                getMemberInfo: function() {
+                    switch (this.member) {
+                        case '2':
+                            this.birthday = '1994/7/12';
+                            this.bloodtype = 'AB';
+                            this.color = '赤';
+                            break;
+                        case '1' :
+                            this.birthday = '1995/6/4';
+                            this.bloodtype = 'A';
+                            this.color = '黄';
+                            break;
+                        case '3' :
+                            this.birthday = '1996/6/11';
+                            this.bloodtype = 'AB';
+                            this.color = '桃';
+                            break;
+                        case '4' :
+                            this.birthday = '1993/6/21';
+                            this.bloodtype = 'O';
+                            this.color = '紫';
+                            break;
+                        default :
+                            this.birthday = '';
+                            this.bloodtype = '';
+                            this.color = '';
+                    }
+                }
+            }
+        });
+    </script>
+    <style>
+        .error {
+            color: red;
+        }
+        .sasaki {
+            color: pink;
+        }
+    </style>
+</body>
+
+</html>
