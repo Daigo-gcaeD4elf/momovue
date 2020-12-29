@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="korona"></div>
+    <div>
+        <button id="flu">インフル</button>
+    </div>
+</body>
+<script>
+    let korona = document.getElementById('korona');
+    let flu    = document.getElementById('flu');
+
+    flu.addEventListener('click', () => {
+        korona.innerHTML = 'マンゴーパイナップル';
+    });
+</script>
+</html>
